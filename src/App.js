@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+  const [url, setUrl] = useState('');
+
+  const handleChange = (e) => {
+    const newUrl = e.target.value;
+    const pattern = /novelupdates\.com/;
+    if (newUrl.match(pattern)) {
+      setUrl(newUrl);
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <input
+        type="text"
+        value={url}
+        onChange={e => setUrl(e.target.value)}
+        placeholder="Enter URL"
+      />
+      <iframe src={url} />
     </div>
   );
 }
