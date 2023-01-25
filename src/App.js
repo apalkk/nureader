@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import stage from "./style.css"
 
 function App() {
   const [url, setUrl] = useState('');
@@ -8,18 +9,24 @@ function App() {
     const pattern = /novelupdates\.com/;
     if (newUrl.match(pattern)) {
       setUrl(newUrl);
+    } else {
+      <div>
+        Enter Valid URL
+      </div>
     }
   }
 
   return (
     <div>
-      <input
-        type="text"
-        value={url}
-        onChange={e => setUrl(e.target.value)}
-        placeholder="Enter URL"
-      />
-      <iframe src={url} />
+      <div className='search'>
+        <input
+          type="text"
+          value={url}
+          onChange={e => setUrl(e.target.value)}
+          placeholder="Enter URL"
+        />
+      </div>
+      <iframe src={url} class='one' />
     </div>
   );
 }
