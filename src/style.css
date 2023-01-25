@@ -6,6 +6,7 @@ body {
   background-color: #212426;
 }
 
+
 .one {
     overflow: hidden;
     margin: auto;
@@ -19,6 +20,21 @@ body {
   background: #1f2123;
   box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
 }
+
+.bn59 {
+    background-color: #3fa7d0;
+    border: 1px solid rgba(70, 53, 53, 0.6);
+    font-weight: 600;
+    position: fixed;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    height: 45px;
+    width: 130px;
+    right: 3vh;
+    bottom: 3vh;
+    opacity: 0.5;
+  }
 
 .search input {
   border: none;

@@ -4,6 +4,10 @@ import stage from "./style.css"
 function App() {
   const [url, setUrl] = useState('');
 
+  const handleStart = () => {
+    window.open("https://www.google.com");
+  }
+
   const handleChange = (e) => {
     const newUrl = e.target.value;
     const pattern = /novelupdates\.com/;
@@ -18,6 +22,7 @@ function App() {
 
   return (
     <div>
+      <button onClick={handleStart} class='bn59'>Start Reading</button>
       <div className='search'>
         <input
           type="text"
@@ -26,7 +31,7 @@ function App() {
           placeholder="Enter URL"
         />
       </div>
-      <iframe src={url} class='one' />
+      <iframe src={url} class='one' frameBorder="0"/>
     </div>
   );
 }
